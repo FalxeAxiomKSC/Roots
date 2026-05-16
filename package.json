@@ -1,0 +1,47 @@
+{
+  "name": "sustainable-systems",
+  "version": "1.0.0",
+  "description": "Software that makes sustainability actionable for communities",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "cd src/backend && npm run dev",
+    "dev:frontend": "cd src/frontend && npm run dev",
+    "build": "npm run build:backend && npm run build:frontend",
+    "build:backend": "cd src/backend && npm run build",
+    "build:frontend": "cd src/frontend && npm run build",
+    "test": "npm run test:shared && npm run test:backend && npm run test:frontend",
+    "test:shared": "cd src/shared && npm test",
+    "test:backend": "cd src/backend && npm test",
+    "test:frontend": "cd src/frontend && npm test",
+    "lint": "npm run lint:shared && npm run lint:backend && npm run lint:frontend",
+    "lint:shared": "cd src/shared && npm run lint",
+    "lint:backend": "cd src/backend && npm run lint",
+    "lint:frontend": "cd src/frontend && npm run lint",
+    "typecheck": "npm run typecheck:shared && npm run typecheck:backend && npm run typecheck:frontend",
+    "typecheck:shared": "cd src/shared && npm run typecheck",
+    "typecheck:backend": "cd src/backend && npm run typecheck",
+    "typecheck:frontend": "cd src/frontend && npm run typecheck",
+    "clean": "rm -rf node_modules dist build coverage .next out"
+  },
+  "keywords": [
+    "sustainability",
+    "community",
+    "software",
+    "systems",
+    "environmental"
+  ],
+  "author": "Sustainable Systems Team",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/organization/sustainable-systems.git"
+  },
+  "bugs": {
+    "url": "https://github.com/organization/sustainable-systems/issues"
+  },
+  "homepage": "https://github.com/organization/sustainable-systems#readme"
+}
