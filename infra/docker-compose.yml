@@ -1,0 +1,62 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${DB_NAME:-sustainability_funding}
+      POSTGRES_USER: ${DB_USER:-roots}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-roots} -d ${DB_NAME:-sustainability_funding}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.5"
+
+  backend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PORT: 3001
+      DATABASE_URL: postgresql://${DB_USER:-roots}:${DB_PASSWORD:-changeme}@db:5432/${DB_NAME:-sustainability_funding}
+      NODE_ENV: production
+      CACHE_TTL: ${CACHE_TTL:-300}
+      COMPRESSION_ENABLED: ${COMPRESSION_ENABLED:-true}
+      CARBON_AWARE_SCHEDULING: ${CARBON_AWARE_SCHEDULING:-false}
+      DATA_RETENTION_DAYS: ${DATA_RETENTION_DAYS:-365}
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: "1.0"
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "${HTTP_PORT:-80}:80"
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: "0.25"
+
+volumes:
+  pgdata:

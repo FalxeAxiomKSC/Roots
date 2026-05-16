@@ -1,0 +1,294 @@
+.funding-sources {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.funding-sources-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+}
+
+.funding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.funding-header h1 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.primary-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #22c55e;
+  color: white;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.primary-button:hover {
+  background: #16a34a;
+}
+
+/* Filters Bar */
+.filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.filter-group label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  min-width: 120px;
+}
+
+.filter-group select:focus,
+.filter-group input:focus {
+  outline: none;
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+/* Results Count */
+.results-count {
+  margin-bottom: 16px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Funding List */
+.funding-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.funding-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.funding-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.funding-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.funding-type-icon {
+  font-size: 2rem;
+}
+
+.funding-card-info h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.funding-aid-group {
+  margin: 4px 0 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.funding-badge {
+  margin-left: auto;
+  padding: 4px 12px;
+  background: #e5e7eb;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.funding-description {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.funding-amount {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.amount-label {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.amount-value {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.funding-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.detail-item {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.detail-item.deadline {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.funding-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.view-button {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  background: white;
+  color: #1f2937;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.view-button:hover {
+  background: #f9fafb;
+  border-color: #d1d5db;
+}
+
+.apply-button {
+  flex: 1;
+  padding: 10px 16px;
+  text-align: center;
+  background: #22c55e;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.apply-button:hover {
+  background: #16a34a;
+}
+
+/* No Results */
+.no-results {
+  text-align: center;
+  padding: 40px;
+  background: white;
+  border-radius: 8px;
+}
+
+.no-results-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.no-results p {
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+.reset-button {
+  padding: 8px 16px;
+  background: #e5e7eb;
+  color: #374151;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.reset-button:hover {
+  background: #d1d5db;
+}
+
+@media (max-width: 640px) {
+  .funding-sources {
+    padding: 16px;
+  }
+
+  .funding-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .funding-header h1 {
+    font-size: 2rem;
+  }
+
+  .primary-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .filters-bar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-group select,
+  .filter-group input {
+    width: 100%;
+  }
+}
