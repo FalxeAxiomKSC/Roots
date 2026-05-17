@@ -41,4 +41,8 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## License
 
-[License information]
+MIT License - see LICENSE file for details
+
+---
+
+*This documentation was updated as part of the repository reorganization to improve project structure and maintainability.*
