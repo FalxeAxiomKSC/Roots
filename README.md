@@ -43,6 +43,63 @@ See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 MIT License - see LICENSE file for details
 
+## Repository Organization
+
+This repository is organized with the following structure:
+
+```
+├── src/
+│   ├── backend/          # Express.js API server and backend services
+│   ├── frontend/         # Next.js React application
+│   └── shared/          # Shared utilities, types, and constants
+├── docs/               # Documentation
+│   ├── api/            # API documentation and endpoints
+│   ├── architecture/   # Architectural decisions and patterns
+│   └── guides/         # User and developer guides
+├── scripts/            # Build, test, and development scripts
+├── tests/              # Test suites across all layers
+├── .github/            # GitHub workflows and issue templates
+└── config files       # TypeScript, ESLint, and other configurations
+```
+
+### Key Features
+
+- **Monorepo Structure**: Clear separation of concerns with dedicated directories for backend, frontend, and shared code
+- **TypeScript**: Full type safety across all components
+- **Comprehensive Testing**: Unit tests, integration tests, and coverage reporting
+- **Automated CI/CD**: GitHub Actions workflow for testing and deployment
+- **Documentation**: Detailed API docs, architecture guides, and getting started instructions
+- **Development Tools**: Setup and cleanup scripts, environment templates
+- **Issue Management**: GitHub issue templates for bug reports and feature requests
+
+### Quick Start
+
+1. **Setup Environment**:
+   ```bash
+   cp .env.example .env.local
+   chmod +x scripts/setup.sh
+   ./scripts/setup.sh
+   ```
+
+2. **Start Development**:
+   ```bash
+   npm run dev
+   ```
+
+3. **Run Tests**:
+   ```bash
+   npm test
+   ```
+
+### Scripts Available
+
+- `./scripts/setup.sh` - Complete development environment setup
+- `./scripts/clean.sh` - Clean build artifacts and dependencies
+- `npm run dev` - Start all services in development mode
+- `npm run test` - Run all tests
+- `npm run lint` - Code linting
+- `npm run typecheck` - TypeScript type checking
+
 ---
 
-*This documentation was updated as part of the repository reorganization to improve project structure and maintainability.*
+*This repository has been comprehensively organized to support sustainable development practices with clear structure, comprehensive documentation, and automated tooling.*

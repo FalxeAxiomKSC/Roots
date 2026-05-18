@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./.next",
+    "rootDir": "./src",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@shared/*": ["../../shared/src/*"]
+    },
+    "jsx": "preserve",
+    "lib": ["dom", "dom.iterable", "ES2020"]
+  },
+  "include": ["src/**/*", "next.config.js"],
+  "exclude": ["node_modules", ".next", "dist"]
+}
