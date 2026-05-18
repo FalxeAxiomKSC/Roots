@@ -78,7 +78,7 @@ Create a `.env.local` file in the root directory and add required environment va
 
 ```env
 # Backend
-PORT=3001
+PORT=
 NODE_ENV=development
 
 # Database (example)
